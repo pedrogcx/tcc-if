@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Católico - Missas e Localização</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://img.icons8.com/plasticine/100/cross.png" type="image/png">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Barra de Navegação Superior (Header) -->
+    <header class="bg-white text-blue-900 p-4 sticky top-0 z-40 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="https://img.icons8.com/plasticine/100/cross.png" alt="Logo Cruz" class="h-10 w-10">
+                <h1 class="text-xl font-bold md:text-2xl hidden sm:block">PORTAL CATÓLICO</h1>
+            </a>
+            <nav class="hidden md:flex items-center space-x-6 text-base font-medium">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="missas.html" class="nav-link active">Missas e Localização</a>
+                <a href="biblia.html" class="nav-link">Bíblia</a>
+                <a href="noticias.html" class="nav-link">Notícias</a>
+                <a href="contato.html" class="nav-link">Contato</a>
+            </nav>
+            <div id="hamburger-menu" class="md:hidden hamburger-icon z-50"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <!-- Menu Mobile -->
+    <nav id="mobile-nav" class="nav-menu fixed top-0 right-0 w-64 h-full bg-white text-blue-900 p-6 md:hidden z-40 shadow-xl">
+        <div class="pt-20 space-y-4">
+            <a href="index.html" class="block py-2 text-lg font-medium border-b border-gray-200">Início</a>
+            <a href="missas.html" class="block py-2 text-lg font-medium border-b border-gray-200">Missas e Localização</a>
+            <a href="biblia.html" class="block py-2 text-lg font-medium border-b border-gray-200">Bíblia</a>
+            <a href="noticias.html" class="block py-2 text-lg font-medium border-b border-gray-200">Notícias</a>
+            <a href="contato.html" class="block py-2 text-lg font-medium">Contato</a>
+        </div>
+    </nav>
+    <div id="overlay" class="fixed inset-0 bg-black opacity-0 md:hidden z-30 transition-opacity duration-300 pointer-events-none"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section class="text-center mb-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-900">Missas e Localização</h2>
+        </section>
+        
+        <section class="bg-blue-800 text-white rounded-2xl shadow-xl overflow-hidden mb-12 p-6 md:p-10">
+            <h3 class="text-3xl font-extrabold text-center mb-6">Evangelho do Dia</h3>
+            <div id="gospel-of-day" class="text-center text-lg leading-relaxed space-y-4">
+                <p>Carregando o evangelho...</p>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1">
+                <h3 class="text-3xl font-bold text-center text-blue-900 mb-6">Horários das Missas</h3>
+                <div id="mass-schedule-list" class="space-y-6">
+                    <p class="text-center text-gray-600">Carregando horários...</p>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-2">
+                <h3 class="text-3xl font-bold text-center text-blue-900 mb-6">Localização das Paróquias</h3>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <iframe id="map-iframe" class="w-full h-80 md:h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.503487968593!2d-43.31018868513317!3d-15.80165598912953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7559e17b62e493b%3A0x7697472079075305!2sCatedral%20de%20Santo%20Ant%C3%B4nio!5e0!3m2!1spt-BR!2sbr!4v1678886543210!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div id="church-list" class="p-4 divide-y divide-gray-200">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-gray-300 mt-12 py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; <span id="current-year"></span> Portal Católico. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./JS/global.js"></script>
+    <script src="./JS/missas.js"></script>
+
+</body>
+</html>

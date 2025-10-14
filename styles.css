@@ -1,0 +1,72 @@
+/*
+  Este arquivo contém os estilos CSS compartilhados, inspirados
+  na clareza e organização de sites como o jw.org.
+*/
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilos para formulários */
+.form-input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow;
+}
+
+/* Estilos para a navegação */
+.nav-link {
+    @apply relative text-blue-800 hover:text-blue-600 transition-colors;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: theme('colors.blue.700');
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Estilos para o menu mobile */
+.nav-menu {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.nav-menu.open {
+    transform: translateX(0);
+}
+
+/* Ícone do menu hamburger */
+.hamburger-icon {
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: theme('colors.blue.900');
+    margin: 5px 0;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
